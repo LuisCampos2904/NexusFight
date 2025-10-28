@@ -1,0 +1,13 @@
+{
+  "name": "nexusfight-backend",
+  "version": "1.0.0",
+  "description": "Backend para pontuações do NexusFight",
+  "main": "pontuacao.js",
+  "scripts": {
+    "start": "node pontuacao.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  }
+}

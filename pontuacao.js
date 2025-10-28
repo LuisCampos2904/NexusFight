@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb+srv://LuisCampos:mongodb+srv://LuisCampos:udEfl2ScR0KTF0e3@projetosistemasmultimid.24gzry8.mongodb.net/?retryWrites=true&w=majority@projetosistemasmultimid.24gzry8.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://LuisCampos:udEfl2ScR0KTF0e3@projetosistemasmultimid.24gzry8.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -21,7 +21,7 @@ const Pontuacao = mongoose.model('Pontuacao', pontuacaoSchema);
 
 app.use(express.json());
 
-app.post('https://nexusfightbackup.lu1sedu4rd0.repl.co/api/pontuacao', (req, res) => {
+app.post('/api/pontuacao', (req, res) => {
   const { nomeJogador, pontuacao } = req.body;
   const novaPontuacao = new Pontuacao({
     nomeJogador,
@@ -39,7 +39,7 @@ app.post('https://nexusfightbackup.lu1sedu4rd0.repl.co/api/pontuacao', (req, res
   });
 });
 
-app.get('https://nexusfightbackup.lu1sedu4rd0.repl.co/api/pontos', (req, res) => {
+app.get('/api/pontos', (req, res) => {
   Pontuacao.find({}, 'nomeJogador pontuacao', (err, pontuacoes) => {
     if (err) {
       console.error('Erro ao buscar pontuações:', err);
